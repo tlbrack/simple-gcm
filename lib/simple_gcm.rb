@@ -73,7 +73,7 @@ module SimpleGCM
     def each_error
       @results.each_key do |reg_id|
         result = @results[reg_id]
-        error = result[:error]
+        error = result[:error] if result
         yield reg_id, error if error
       end
     end
